@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Arnav Chakravarty Portfolio</title>
+    
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        background: #ffffff;
+        color: #fff;
+    }
+    #header{
+        width: 100%;
+        height: 100vh;
+        background-image: url(images/background.jpg);
+        background-size: cover;
+        background-position: center;
+        
+        
+    }
+    .container{
+        padding: 10px 10%;
+    }
+    
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .h1{font-size: larger;}
+    .logo{
+        width: 60px;
+    }
+  
+    
+    nav ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+    }
+    
+    nav ul li a{
+        color: #00274e;
+        text-decoration: none;
+        font-size: 20px;
+        position: relative;
+    }
+
+    nav ul li a:hover::after{
+        width: 100%;
+        
+    }
+
+
+.home-content h1{
+    margin-top: 20%;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    color:#ffffff;
+}
+
+
+
+.home-content h3{
+    font-size: 40px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+    /* about */
+    
+    #about{
+        padding: 80px 0;
+        color: #262626;
+        font-weight: 400;
+        font size: 35px;
+    }
+    
+    .row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap:wrap;
+    }
+    
+    .about-col-1{
+        flex-basis: 35%;
+    }
+    .about-col-1 img{
+        width: 100%;
+        border-radius: 15px;
+    }
+    .about-col-2{
+        flex-basis: 60%;
+    }
+    .about-col-2 p{
+    font-size: 25px;
+    font-weight: lighter;
+}
+    .sub-title
+    {
+        font-size: 70px;
+        font-weight: bold;
+        color: #262626;
+        transition: all 1s;
+        overflow: hidden;
+
+    }
+    
+    .tab-titles{
+        display: flex;
+        margin: 20px 0 40px;
+    }
+    .tab-titles h2{
+       font-size:25px
+    }
+    .tab-links{
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+  transition: all 1s
+    }
+    .tab-links::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #00274e;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;
+        list-style: none;
+    }
+    
+    .tab-links.active-link::after{
+        width: 50%;
+    }
+    
+    .tab-contents ul li{    
+        list-style: none;
+        margin: 20px 0;
+    }
+    .tab-contents ul li span{
+        color: #00274e;
+        font-size: 25px;
+        
+        margin: 10px;
+    }
+    
+    .tab-contents.active-tab{
+        display:contents;
+    }
+   
+    
+    /* Strengths */
+    #Strengths{
+        padding: 30px 0;
+    }
+    .Strengths-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+    }
+    .Strengths-list div{
+        background: #e0e0e0;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 300;
+        border-radius: 10px;
+        transition:background 0.5s, transform 0.5s;
+    }
+    .Strengths-list div i{
+        font-size: 50px;
+        margin-bottom: 30px;
+        color:00274e;
+    }
+    .Strengths-list div h2{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        color:00274e;
+    }
+    .Strengths-list div a{
+        text-decoration: none;
+        color: #00274e;
+        font-size: 12px;
+        margin-top: 20px;
+        display: inline-block;
+        border:2px
+    }
+    .Strengths-list div:hover{
+        background: #00274e;
+        transform: translateY(-10px);
+        color:#ffffff
+    }
+    /* portfolio */
+    #portfolio{
+        padding: 50px 0;
+    }
+    .work-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+    }
+    .work{
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+    }
+    .work img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.5s;
+    }
+    
+    .layer{
+        width: 100%;
+        height: 0;
+        background: linear-gradient(rgba(0,0,0,0.6), #00274e);
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        font-size: 14px;
+       transition: height 0.5s;
+       color:white;
+       
+    }
+    .layer h3{
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .layer a{
+        margin-top: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        
+        line-height: 60px;
+        background: #ffffff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        margin-right: 15px;
+        color: #262626;
+        display: inline-block;
+        transition: transform 0.5s;
+    }
+    .work:hover img{
+        transform: scale(1.1);
+    }
+    .work:hover .layer{
+        height: 100%;
+    }
+    .btn{
+        display: block;
+        margin: 50px auto;
+        width: fit-content;
+        background-color: #00274e;
+        border: 1px solid #00274e;
+        padding: 14px 50px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #ffffff;
+        transition: background 0.5s;
+    }
+    .btn:hover{
+        background: #ffffff;
+        color: #00274e;
+    }
+    
+    /*contact*/
+    .contact-left{
+        flex-basis: 35%;
+    }
+    .contact-right{
+        flex-basis: 60%;
+    }
+    .contact-left p{
+        margin-top: 30px;
+    }
+    .contact-left p i{
+        color: #262626;
+        margin-right: 15px;
+        font-size: 25px;
+    }
+    .social-icons{
+        margin-top: 30px;
+    }
+    .social-icons a{
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: #262626;
+        display: inline-block;
+        transition: transform 0.5s;
+    }
+    .social-icons a:hover{
+        color: #00274e;
+        transform: translateY(-5px);
+    }
+
+    .contact-right form{
+        width: 100%;
+    }
+    form input, form textarea{
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #dcdcdc;
+        padding: 15px;
+        margin: 15px 0;
+        color: #1c1c1c;
+        font-size: 18px;
+        border-radius: 6px;
+    }
+
+    .copyright{
+        width: 100%;
+        text-align: center;
+        padding: 25px 0;
+        background: #888888;
+        font-weight: 300;
+        margin-top: 20px;
+        color:#ffffff;
+    }
+    .copyright i{
+        color: #ffffff;
+    }
+    .copyright a{
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/*typing text*/
+
+      .typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "software Developer";
+    color: #00274e;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid rgba(255, 255, 255, 0);
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #00274e;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Aspiring Creative Professional";
+    }
+    21%, 40%{
+        content: "Communication Design Student";
+    }
+    41%, 60%{
+        content: "Freelance Graphic Designer";
+    }
+    61%, 80%{
+        content: "User Experience Enthusiast";
+    }
+    81%, 100%{
+        content: "Conceptual Designer";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+</style>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/AC-logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+        </nav>
+        <div class="home-content">
+         
+            <h1 class="titleslide">Hi, Its <span>Arnav</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+        </div>
+    </div>
+</div>
+
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/Profile.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Embarking on a design journey, always seeking to learn.
+              I love finding creative solutions for problems. I am a colorful person filled with curiosity and clever thoughts I might not be perfect but surely am confident.
+            </p>
+
+                <div class="tab-titles">
+                    <h2>Skills</h2>
+
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><img src="images/adobe-photoshop.png" class="skill logo"><span>Photoshop</span></li>
+                        <li><img src="images/adobe-illustrator.png" class="skill logo"><span>Illustrator</span></li>
+                        <li><img src="images/figma.png" class="skill logo"><span>Figma</span></li>
+                        
+                    </ul>
+                    
+                    
+                   
+                    <hr width="100%" size="2px">
+                <a href="images/my-cv.pdf" download class="btn">Know more </a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- Strengths -->
+<div id="Strengths">
+    <div class="container">
+        <h1 class="sub-title">My Strengths </h1>
+        <div class="Strengths-list">
+
+            <div>
+                <h2>Web Design</h2>
+                <p>I create visually appealing, user-friendly, and functional websites that bring ideas to life. My goal is to blend creativity and functionality to deliver an engaging online experience.</p>
+                <a href="https://www.behance.net/arnavchakrav">Learn more</a>
+            </div>
+
+            <div>
+                <h2>UI/UX Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla nibh, tincidunt sit amet sapien quis.</p>
+                <a href="https://www.behance.net/arnavchakrav">Learn more</a>
+            </div>
+            <div>
+                <h2>App Design</h2>
+                <p>I’m learning to design simple and user-friendly app interfaces that make navigation easy.
+                    My goal is to create designs that look good and work smoothly for everyone.</p>
+                <a href="https://www.behance.net/arnavchakrav">Learn more</a>
+            </div>
+
+        </div>
+
+        <div class="Strengths-list">
+            <div>
+                
+                <h2>Campaign Design</h2>
+                <p>I design campaigns that communicate clear messages and engage the target audience.
+                    As a beginner, I focus on combining creativity with strategy to make a strong impact.</p>
+                <a href="https://www.behance.net/arnavchakrav">Learn more</a>
+            </div>
+            <div>
+                
+                <h2>Banners / Posters</h2>
+                <p>I design eye-catching banners and posters that effectively convey messages and captivate audiences.
+                    My focus is on combining vibrant visuals and impactful text to leave a lasting impression.</p>
+                <p><a href="https://www.behance.net/arnavchakrav">Learn more</a></p>
+            </div>
+            <div>
+            
+                <h2>Photography </h2>
+                <p>I capture moments through the lens, turning ordinary scenes into visually compelling stories.
+                    My focus is on mastering lighting, composition, and perspective to create impactful images.</p>
+                <a href="https://www.behance.net/arnavchakrav">Learn more</a>
+            </div>
+
+        </div>
+        <br><br>
+        <hr width="100%" size="2px">
+    </div>
+</div>
+
+<!-- portfolio -->
+<div id="portfolio">    
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/Posters.jpg">
+                <div class="layer">
+                    <h2>Poster Design</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Homepage.jpg">
+                <div class="layer">
+                    <h2>Webpage Design</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            
+            <div class="work">
+                <img src="images/Pizza Package Box Mockup.jpg">
+                <div class="layer">
+                    <h2>Package
+                         design</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/455.jpg">
+                <div class="layer">
+                    <h2>Brochure designs</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/tron.png">
+                <div class="layer">
+                    <h2>Movie Poster</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Tesla billboard1.jpg">
+                <div class="layer">
+                    <h2>Cybertruck campaign</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            
+            <div class="work">
+                <img src="images/Cyber campaign.jpg">
+                <div class="layer">
+                    <h2>Social Media osts</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Chronotype.jpg">
+                <div class="layer">
+                    <h2>Flyer design</h2>
+                    <p>The app connects you yo the talented people around the world. Download it from play store.</p>
+                    <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                </div>
+            </div>
+            
+        </div>  
+        <a href="https://www.behance.net/arnavchakrav" class="btn">See more</a>
+    </div>
+</div>
+<!-- contact -->
+<div id="contact">
+    
+    <div class="container">
+    <div class="row">
+        <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p color="">arnavchakravarty05@gmail.com</p>
+            <p>9820071732</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/arnav-chakravarty-ba960b237/"><i class="fa-brands fa-linkedin"></i></a>
+
+                <a href="https://www.behance.net/arnavchakrav"><i class="fa-brands fa-behance"></i></a>
+                <a href="https://www.instagram.com/shon__05__?igsh=MWdqNGJ6NnZsbHEyYw=="><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+     </div>
+    </div>
+</div>
+<br>
+<br>
+   <footer> <p align="center" >Made by Arnav Chakravarty </p></footer>    
+</body>
+</html>
